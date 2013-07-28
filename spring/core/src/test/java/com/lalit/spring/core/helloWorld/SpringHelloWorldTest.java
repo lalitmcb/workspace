@@ -17,11 +17,12 @@ public class SpringHelloWorldTest {
 				new String[] { "application-context.xml" });
 
 		// Fetch the helloWorld bean
-		HelloWorld helloWorld = applicationContext.getBean(HelloWorld.class);
+		HelloWorld helloWorld = applicationContext.getBean("helloWorld",HelloWorld.class);
 		
 		//Let's check if the bean is not null and returns the string
 		assertNotNull(helloWorld);
-		assertSame("HelloWorld", helloWorld.getMessage());
+		assertSame("Hello World", helloWorld.getMessage());		
+		
 	}
 
 }
