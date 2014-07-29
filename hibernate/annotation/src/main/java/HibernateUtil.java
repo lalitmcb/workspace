@@ -1,5 +1,7 @@
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 /**
  * The class to boot strap the hibernate if it is not started.
@@ -9,11 +11,16 @@ import org.hibernate.cfg.AnnotationConfiguration;
 public class HibernateUtil {
 	
 	private static SessionFactory sessionFactory;
+	private static ServiceRegistry serviceRegistry;
 	
 	static{
 		try{
 			//By default it will look for hibernate.cfg.xml in the class path
-			sessionFactory=new AnnotationConfiguration().configure().buildSessionFactory();
+			Configuration configuration = new Configuration();
+		    configuration.configure();
+		    serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
+		            configuration.getProperties()).build();
+		    sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 		}catch(Throwable ex){
 			throw new ExceptionInInitializerError(ex);
 		}
