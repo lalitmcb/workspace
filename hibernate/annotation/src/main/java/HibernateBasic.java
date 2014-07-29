@@ -5,7 +5,6 @@ import com.lalit.hibernate.annotation.model.Student;
 
 public class HibernateBasic {
 
-
 	public static void main(String[] args) {
 
 		//Get the session from the Session factory
