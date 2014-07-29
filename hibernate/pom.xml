@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lalit.examples</groupId>
-	<artifactId>spring</artifactId>
+	<artifactId>hibernate</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0</version>
 	
@@ -14,7 +14,7 @@
 	</properties>
 
 	<modules>
- <module>core</module>
+ <module>annotation</module>
 	</modules>
 
 </project>

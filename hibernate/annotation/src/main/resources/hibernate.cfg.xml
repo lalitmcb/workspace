@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:hsql://localhost</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect - This tells the SQL grammer to be used -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Log out all the sql that hibernate is issuing to datbase.
+             This is very useful for debugging -->
+        <property name="show_sql">true</property>
+        
+          <!-- Format the logged sql -->
+        <property name="format_sql">false</property>
+        
+         <!-- Show comment -->
+        <property name="use_sql_comments">false</property>
+
+        <!-- validates the table structure as per mapping definition. -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapping class.  -->
+        <mapping class="com.lalit.hibernate.annotation.model.Student"/>
+    </session-factory>
+</hibernate-configuration>
+
+
