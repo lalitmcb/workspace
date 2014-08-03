@@ -10,5 +10,4 @@ public class HelloWorldMessage implements Message{
 		return "Hello World";
 	}
 
-	
 }

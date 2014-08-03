@@ -10,6 +10,4 @@
        <context:annotation-config/>
        <context:component-scan base-package="com.lalit" />
        
-       <!-- bean id="helloWorld" class="com.lalit.spring.core.helloWorld.HelloWorld"/ -->
-
 </beans>

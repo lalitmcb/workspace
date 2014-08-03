@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class HelloWorld {
 
 	@Autowired
-	HelloWorldMessage helloWorldMessage;
+	Message helloWorldMessage;
 	
 	public String getMessage(){
 		return helloWorldMessage.getMessage();
