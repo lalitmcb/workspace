@@ -7,14 +7,15 @@
 	<artifactId>examples</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0</version>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<currentVersion>1/0/0</currentVersion>
 	</properties>
 
 	<modules>
- <module>spring</module>
+		<module>hibernate</module>
+		<module>spring</module>
 	</modules>
 
 </project>

@@ -25,6 +25,7 @@ public class Student {
 	protected String name;
 	protected Integer age;
 	
+	@Column(name="age")
 	public Integer getAge() {
 		return age;
 	}

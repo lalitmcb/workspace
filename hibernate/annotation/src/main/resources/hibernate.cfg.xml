@@ -28,7 +28,7 @@
         <property name="show_sql">true</property>
         
           <!-- Format the logged sql -->
-        <property name="format_sql">false</property>
+        <property name="format_sql">true</property>
         
          <!-- Show comment -->
         <property name="use_sql_comments">false</property>
