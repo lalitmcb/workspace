@@ -1,6 +1,6 @@
 Examples on various topics of Java
 
-- <a href="http://lalit-bhatt.blogspot.in/p/hibernate.html">Hibernate Articles/Tutorials</a>
+- <a href="http://tech.lalitbhatt.net/p/hibernate.html">Hibernate Articles/Tutorials</a>
 
-- <a href="http://lalit-bhatt.blogspot.in">Blog on Software Development/Technology</a>
+- <a href="http://tech.lalitbhatt.net">Blog on Software Development/Technology</a>
 
