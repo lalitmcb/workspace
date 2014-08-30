@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	
+<Resource name="jdbc/springHibernateWebApp" 
+    auth="Container"
+    type="javax.sql.DataSource" 
+	driverClassName="org.postgresql.Driver"
+	url="jdbc:postgresql://localhost/springHibernateWebApp?characterEncoding=utf-8"
+	username="postgres" 
+	password="postgres" 
+	validationQuery="select 1"
+	removeAbandoned="true" 
+	removeAbandonedTimeout="60" 
+	useUnicode="true"
+	autoReconnect="true"
+	maxWait="1000"
+	maxActive="100" 
+	maxIdle="30" />		
+		
+</Context>

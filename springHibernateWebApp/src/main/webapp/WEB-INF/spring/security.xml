@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security 
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<global-method-security pre-post-annotations="enabled" />
+
+	<http auto-config='true' use-expressions="true">
+		<intercept-url pattern="/home.jsp" access="permitAll()" />
+		<intercept-url pattern="/resources/**" access="permitAll()" />
+		<intercept-url pattern="/logout.jsp" access="permitAll()" />
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+		<form-login login-page="/home.jsp" default-target-url="/entry.yummy"
+			always-use-default-target="true" />
+		<session-management invalid-session-url="/home.jsp"/>
+		<logout logout-success-url="/home.jsp" invalidate-session="true" />
+	</http>
+
+	<beans:bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="authenticationProvider">
+		</authentication-provider>
+	</authentication-manager>
+
+
+	<beans:bean id="authenticationProvider"
+		class="net.lalitbhatt.springHibernateWebApp.auth.PortalAuthenticationProvider" />
+
+</beans:beans>

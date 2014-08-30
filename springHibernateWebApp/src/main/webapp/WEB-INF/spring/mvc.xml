@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+      					http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/mvc 
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                        http://www.springframework.org/schema/aop 
+                        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<!-- Configure bean to convert JSON to POJO and vice versa -->
+			<bean
+				class="net.lalitbhatt.springHibernateWebApp.jackson.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="net.lalitbhatt.springHibernateWebApp.jackson.HibernateAwareObjectMapper" />
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<aop:aspectj-autoproxy />
+
+	<context:component-scan
+		base-package="net.lalitbhatt.springHibernateWebApp.controller,net.lalitbhatt.springHibernateWebApp.rest" />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/pages/tiles/tiles-main.xml</value>
+			</list>
+		</property>
+
+	</bean>
+
+
+</beans>

@@ -1,0 +1,26 @@
+Setup Instructions:
+
+Tools and Frameworks:
+	- Install Java 8
+	= Install Maven 3+ version
+	- Install postgresql 9.4+ version (Username/password: postgres/postgres)
+
+Getting Source Code:
+	- Clone the git repository
+	        git clone https://github.com/lalitmcb/workspace.git
+	- Check the code under springHibernateWebApp folder
+ 
+ Setting up Application
+	 - Create database with name springHibernateWebApp
+	            createdb -U postgres springHibernateWebApp
+	 - Run the following scripts in sequence
+	        artifacts/sql/schema.sql
+	        artifacts/sql/master_data.sql
+	- From command prompt go to springHibernateWebApp directory
+	- Issue command 'mvn tomcat7:run' This will download all the dependencies and will start embedded tomcat. 
+	- Once tomcat is up access the application at https://localhost:8443/springHibernateWebApp
+	
+Setting up Eclipse:
+    - Run mvn eclipse:eclipse
+	- Import the project portal in eclipse
+	- Make sure the M2 repository in eclipse in pointing to your maven repository
