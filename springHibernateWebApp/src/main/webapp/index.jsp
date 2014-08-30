@@ -34,6 +34,7 @@
 			</tr>
 		</table>
 	</form>
-
+<a target="_blank" href="http://tech.lalitbhatt.net"><strong>Blog on Software Development/Technology</strong></a><br/>
+<a href="http://www.lalitbhatt.net" target="_blank"><strong>World of Lalit</strong></a>
 </body>
 </html>

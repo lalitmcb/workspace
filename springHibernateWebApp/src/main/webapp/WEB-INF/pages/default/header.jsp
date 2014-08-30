@@ -1,1 +1,2 @@
-<div class="header">I am the header</div>
+<div class="header" align="center"><span>Welcome to the world of Web application.</span><br/>
+<span><a target="_blank" href="http://tech.lalitbhatt.net"><strong>Blog on Software Development/Technology</strong></a></span></div>

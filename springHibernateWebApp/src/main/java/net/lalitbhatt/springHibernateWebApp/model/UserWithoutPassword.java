@@ -1,6 +1,5 @@
 package net.lalitbhatt.springHibernateWebApp.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,8 +19,8 @@ import net.lalitbhatt.springHibernateWebApp.types.Status;
 
 @Entity
 @Table(name = "users", schema = "public")
-public class User implements Serializable{
-    
+public class UserWithoutPassword {
+
 	private Long id;
 	private String email;
 	private String firstName;
@@ -29,9 +28,8 @@ public class User implements Serializable{
 	private Date createdOn;
 	private Role role;
 	private Status status;
-    private String password; 
-   
-    @Id
+
+	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
 	@SequenceGenerator(name = "users_seq", sequenceName = "users_seq")
 	public Long getId() {
@@ -98,13 +96,5 @@ public class User implements Serializable{
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-
-    @Column(name="password")
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }    
 
 }

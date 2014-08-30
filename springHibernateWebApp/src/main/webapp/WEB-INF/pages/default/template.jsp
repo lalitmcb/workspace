@@ -5,10 +5,18 @@
 <html lang="pt-BR" id="ng-app" ng-app="">
 <head>
         <title><spring:message  code="title" /></title>
-        <link href="<c:url value='/resources/css/bootstrap/3.2.0/bootstrap.min.css'  />" rel="stylesheet"/>
-        <link href="<c:url value='/resources/css/bootstrap/3.2.0/bootstrap-theme.min.css'  />" rel="stylesheet"/>
-        <script src="<c:url value='/resources/js/jquery/2.1.1/jquery-2.1.1.min.js' />"></script>
-        <script src="<c:url value='/resources/js/angular/1.2.19/angular.min.js' />"></script>
+        <!-- jquery  -->
+        <script src="<c:url value='/resources/js/jquery/jquery-2.1.1.min.js'/>"></script>
+        
+        <!-- jquery ui -->
+        <script src="<c:url value='/resources/js/jquery/jquery-ui-1.11.1.min.js'/>"></script>
+        <link href="<c:url value='/resources/css/jquery/jquery-ui-1.11.1.min.css' />" rel="stylesheet"/>
+        <link href="<c:url value='/resources/css/jquery/jquery-ui.structure-1.11.1.min.css' />" rel="stylesheet"/>
+        <link href="<c:url value='/resources/css/jquery/jquery-ui.theme-1.111.1.min.css' />" rel="stylesheet"/>
+        
+        <!-- jquery grid -->
+        <script src="<c:url value='/resources/js/jquery/jquery.jqGrid-4.6.0.min.js'/>"></script>
+        <link href="<c:url value='/resources/css/jquery/ui.jqgrid-4.6.0.css' />" rel="stylesheet"/>        
     </head>
     <body>
         <div class="container">
@@ -16,14 +24,6 @@
  
             <tiles:insertAttribute name="body" />
         </div>
- 
-        <!--[if IE]>
-            <script src="<c:url value='/resources/js/bootstrap.min.ie.js' />"></script>
-        <![endif]-->
-        <!--[if !IE]><!-->
-            <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
-        <!--<![endif]-->
- 
         <tiles:insertAttribute name="footer" />
     </body>
 </html>

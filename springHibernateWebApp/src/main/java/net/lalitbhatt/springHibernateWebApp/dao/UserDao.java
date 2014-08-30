@@ -1,7 +1,5 @@
 package net.lalitbhatt.springHibernateWebApp.dao;
 
-import java.util.List;
-
 import net.lalitbhatt.springHibernateWebApp.model.User;
 
 import org.hibernate.Criteria;
@@ -11,7 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository("userDao")
-@Transactional(propagation = Propagation.REQUIRED,readOnly=false)
+@Transactional(propagation = Propagation.REQUIRED,readOnly=true)
 public class UserDao extends BaseDaoHibernate{
     
     @Transactional(propagation = Propagation.REQUIRED,readOnly=false)
@@ -22,12 +20,5 @@ public class UserDao extends BaseDaoHibernate{
         user = (User)criteria.uniqueResult();
         return user;
     }
-
-	public List<User> getListOfUsers() {
-		List<User> userList = null;
-        Criteria criteria = this.getCurrentSession().createCriteria(User.class);
-        userList = criteria.list();
-        return userList;
-	}
 
 }
