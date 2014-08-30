@@ -9,7 +9,7 @@ public class ApplicationController {
     
     @RequestMapping(value = "/home.lmc")
     public String entryPoint(){
-        return "redirect:users/list";
+        return "redirect:user/list.lmc";
     }
 
 

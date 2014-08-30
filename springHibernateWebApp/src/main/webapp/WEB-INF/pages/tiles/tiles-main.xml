@@ -10,8 +10,8 @@
         <put-attribute name="footer" value="/WEB-INF/pages/default/footer.jsp" />
     </definition>
     
-    <definition name="company/list" extends="defaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/pages/company/list.jsp" />
+    <definition name="/page/user/list" extends="defaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/pages/user/list.jsp" />
     </definition>
   
   </tiles-definitions>

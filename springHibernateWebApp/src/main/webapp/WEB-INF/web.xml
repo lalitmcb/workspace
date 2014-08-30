@@ -36,7 +36,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>hibernateFilter</filter-name>
-		<url-pattern>*.yummy</url-pattern>
+		<url-pattern>*.lmc</url-pattern>
 		<url-pattern>/ws/*</url-pattern>
 	</filter-mapping>
 
@@ -52,7 +52,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>*.yummy</url-pattern>
+		<url-pattern>*.lmc</url-pattern>
 		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 
@@ -83,7 +83,4 @@
 		</jsp-property-group>
 	</jsp-config>
 	
-	<welcome-file-list>
-		<welcome-file>search.jsp</welcome-file>
-	</welcome-file-list>
 </web-app>

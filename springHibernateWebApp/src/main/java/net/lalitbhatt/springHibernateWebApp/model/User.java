@@ -1,5 +1,6 @@
 package net.lalitbhatt.springHibernateWebApp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -19,7 +20,7 @@ import net.lalitbhatt.springHibernateWebApp.types.Status;
 
 @Entity
 @Table(name = "users", schema = "public")
-public class User {
+public class User implements Serializable{
     
     private Long id;
     private String email;

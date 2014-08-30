@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserController {
 	
-	 @RequestMapping(value = "/users/list.lmc")
+	 @RequestMapping(value = "/user/list")
 	 public String getUsers(){
-		 return "users/list";
+		 return "/page/user/list";
 	 }
 
 }

@@ -17,23 +17,7 @@
 <script
 	src="<c:url value='/resources/js/portal/restaurantController.js' />"></script>
 </head>
-<body ng-controller="RestaurantController">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-2">
-				Search: <input ng-model="query">
-			</div>
-			<div class="col-md-10">
-				<ul class="restaurants">
-					<li ng-repeat="resturants in restaurant">{{restaurant.name}}</li>
-				</ul>
-
-			</div>
-		</div>
-	</div>
-
-
-	Nothing here {{'yet' + '!'}}
+<body>
 	<h1>Login</h1>
 	<form name='f' action="j_spring_security_check" method='POST'>
 		<table>

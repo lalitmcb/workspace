@@ -9,14 +9,14 @@
 	<global-method-security pre-post-annotations="enabled" />
 
 	<http auto-config='true' use-expressions="true">
-		<intercept-url pattern="/home.jsp" access="permitAll()" />
+		<intercept-url pattern="/index.jsp" access="permitAll()" />
 		<intercept-url pattern="/resources/**" access="permitAll()" />
 		<intercept-url pattern="/logout.jsp" access="permitAll()" />
 		<intercept-url pattern="/**" access="isAuthenticated()" />
-		<form-login login-page="/home.jsp" default-target-url="/entry.yummy"
+		<form-login login-page="/index.jsp" default-target-url="/home.lmc"
 			always-use-default-target="true" />
-		<session-management invalid-session-url="/home.jsp"/>
-		<logout logout-success-url="/home.jsp" invalidate-session="true" />
+		<session-management invalid-session-url="/index.jsp"/>
+		<logout logout-success-url="/index.jsp" invalidate-session="true" />
 	</http>
 
 	<beans:bean id="encoder"
