@@ -11,7 +11,7 @@ import javax.crypto.Cipher;
 
 /**
  * To generate public private key see the blogpost at
- * http://tech.lalitbhatt.net/2014/09/generating-private-and-public-key-using.html
+ * <a href="http://tech.lalitbhatt.net/2014/09/generating-private-and-public-key-using.html">Blog</a>
  * @author Lalit
  *
  */
