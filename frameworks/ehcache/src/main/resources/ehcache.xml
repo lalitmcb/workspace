@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     
+<ehcache name="cacheManagerFromConfiguration">
+ 
+      <defaultCache
+          maxElementsInMemory="5"
+          eternal="false"
+          timeToIdleSeconds="60"
+          timeToLiveSeconds="60"
+          overflowToDisk="true"
+          diskSpoolBufferSizeMB="15"
+          maxElementsOnDisk="5"
+          diskPersistent="false"
+          diskExpiryThreadIntervalSeconds="60"
+          memoryStoreEvictionPolicy="LRU"/>
+     
+       <!-- 
+             Different memory policies
+             Least Recently Used (LRU)
+             Least Frequently Used (LFU)
+             First In First Out (FIFO) 
+          -->
+      <cache name="studentsCache"
+             maxElementsInMemory="2"
+             maxElementsOnDisk="0"
+             eternal="false"
+             timeToIdleSeconds="60"
+             timeToLiveSeconds="0"
+             memoryStoreEvictionPolicy="FIFO">
+      </cache>
+     
+</ehcache>
