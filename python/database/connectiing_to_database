@@ -1,0 +1,37 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# installation of psycopg2 http://initd.org/psycopg/docs/install.html
+
+import psycopg2
+
+con = None
+
+try:
+    # Provide the connection properties to database. 
+    # These are same as used in any database connecting client.
+    con = psycopg2.connect(host='localhost', port = '5432', database='springHibernateWebApp', user='postgres',  password='postgres') 
+    
+    #Execute the statement on database
+    cur = con.cursor()
+    cur.execute("select email,first_name, last_name, role, status from users ")          
+    
+    #Fetch and iterate over the result.
+    rows = cur.fetchall()
+    for row in rows:
+        email = row[0];
+        firstName = row[1];
+        lastName = row[2];
+        role = row[3];
+        status = row[4];
+        
+        print 'User details ' + 'email: ' + email
+        
+#catch any exception
+except psycopg2.DatabaseError, e:
+    print 'Error %s' % e    
+    sys.exit(1)
+    
+#Abnormal or normal, release the connection
+finally:    
+    if con:
+        con.close()
