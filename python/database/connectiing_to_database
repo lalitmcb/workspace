@@ -4,19 +4,19 @@
 
 import psycopg2
 
-con = None
+connection = None
 
 try:
     # Provide the connection properties to database. 
-    # These are same as used in any database connecting client.
-    con = psycopg2.connect(host='localhost', port = '5432', database='springHibernateWebApp', user='postgres',  password='postgres') 
+    # These are same as used in any database connection client.
+    connection = psycopg2.connect(host='localhost', port = '5432', database='springHibernateWebApp', user='postgres',  password='postgres') 
     
     #Execute the statement on database
-    cur = con.cursor()
-    cur.execute("select email,first_name, last_name, role, status from users ")          
+    cursor = connection.cursor()
+    cursor.execute("select email,first_name, last_name, role, status from users ")          
     
     #Fetch and iterate over the result.
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
     for row in rows:
         email = row[0];
         firstName = row[1];
@@ -26,12 +26,12 @@ try:
         
         print 'User details ' + 'email: ' + email
         
-#catch any exception
-except psycopg2.DatabaseError, e:
-    print 'Error %s' % e    
+#catch if  exception happens
+except psycopg2.DatabaseError, exception:
+    print 'Exception  %s' % exception    
     sys.exit(1)
     
 #Abnormal or normal, release the connection
 finally:    
-    if con:
-        con.close()
+    if connection:
+        connection.close()
