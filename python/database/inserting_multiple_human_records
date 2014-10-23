@@ -1,0 +1,29 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# installation of psycopg2 http://initd.org/psycopg/docs/install.html
+
+import psycopg2
+
+connection = None
+
+var =1 
+while var==1:
+    try:
+        # Provide the connection properties to database. 
+        # These are same as used in any database connection client.
+        connection = psycopg2.connect(host='localhost', port = '5432', database='springHibernateWebApp', user='postgres',  password='postgres') 
+        
+        #Execute the statement on database
+        cursor = connection.cursor()
+        cursor.execute("INSERT INTO human(id, day_of_year,  first_name)    VALUES (nextval('human_seq') , trunc(random() * 367 + 1), random());")          
+            
+        connection.commit();
+    #catch if  exception happens
+    except psycopg2.DatabaseError, exception:
+        print 'Exception  %s' % exception    
+        sys.exit(1)
+        
+    #Abnormal or normal, release the connection
+    finally:    
+        if connection:
+            connection.close()
